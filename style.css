@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Mate SC', serif;
+}
+
+nav{
+    display: flex;
+    flex-flow: row wrap;
+    flex-basis: 100%;
+    min-height: 10rem;
+    align-items: center;
+    justify-content: space-around;
+    background-color: black;
+    color: blanchedalmond;
+}
+
+h1{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.items{
+    display: flex;
+    flex-basis: 40%;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.items li{
+    font-size: 1.5rem;
+    list-style: none;
+   
+}
+
+.items li a{
+    color: blanchedalmond;
+    text-decoration: none;
+}
+
+ li a::after {
+    content: "";
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: rgb(255, 255, 255);
+    transition: 500ms;
+  }
+  
+   li a:hover::after {
+    width: 100%;
+  }
+
+  .burger{
+      display: none;
+      cursor: pointer;
+  }
+
+  .burger div{
+      width: 1.8rem;
+      height: 2px;
+      background-color: blanchedalmond;
+      margin-top: 5px;
+  }
+
+
+  @media screen and (max-width:668px){
+      body{
+          overflow-y: hidden;
+          overflow-x: hidden;
+      }
+      
+     .items{
+         position: absolute;
+         top: 10rem;
+         right: 0;
+         height: 85%;
+         width: 40%;
+         background-color: black;
+         display: flex;
+         flex-flow: column wrap;
+         transform: translateX(100%);
+         transition: transform 0.5s ease;
+     }
+     .burger{
+         display: block;
+     }
+
+     .nav-active{
+         transform: translateX(0%);
+     }
+
+
+  }
